@@ -29,13 +29,6 @@
             border-radius: 10px;
         }
 
-        details {
-            margin-top: 20px;
-            text-align: left;
-            display: inline-block;
-            width: 90%;
-        }
-
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -44,10 +37,21 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
 
         button:hover {
             background-color: #0056b3;
+        }
+
+        .details-content {
+            margin-top: 20px;
+            text-align: left;
+            display: none; /* Initially hidden */
+            max-width: 90%;
+            margin: 20px auto;
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         footer {
@@ -64,12 +68,9 @@
 
         <img src="https://i.imgur.com/eFkHwZO.jpeg" alt="Lucas in a jacket" width="500" height="600">
 
-        <button onclick="document.querySelector('details').open = !document.querySelector('details').open;">
-            Click to Read Lucas's Journey
-        </button>
+        <button onclick="toggleDetails()">Click to Read Lucas's Journey</button>
 
-        <details>
-            <summary>Lucas's Journey</summary>
+        <div class="details-content" id="detailsContent">
             <p>Lucas was the kind of person everyone found easy to like. He had a warm, boyish smile that could light up a room, and his enthusiasm for life was infectious. Growing up in a small, picturesque town surrounded by mountains, Lucas spent most of his time outdoors. His interests were as diverse as the seasons. He loved hiking through the woods, sketching the landscapes he saw, and playing guitar on quiet evenings.</p>
             <p>From an early age, Lucas had a creative streak. He loved to draw, turning blank pages into vibrant works of art with his colored pencils. By the time he reached high school, his passion for music blossomed. He joined the school band and quickly became known for his soulful guitar playing. Music gave him a way to express emotions he couldn’t put into words, and it became his greatest escape.</p>
             <p>But beneath his cheerful exterior, Lucas always felt a quiet confusion he couldn't quite name. As his friends talked endlessly about crushes on girls, Lucas would smile and nod, pretending to share their excitement. Yet, deep down, he felt... different.</p>
@@ -80,12 +81,19 @@
             <p>With her support, Lucas started to embrace his identity. He didn’t need to shout it from the rooftops, but he began to live more authentically. His music took on a new depth, his sketches became more vibrant, and his bond with Ethan grew stronger.</p>
             <p>One evening, Lucas finally found the courage to tell Ethan how he felt. Under the soft glow of streetlights, Ethan smiled and admitted he felt the same. It was the beginning of a new chapter for Lucas—one where he could fully be himself, not just in his art but in his life.</p>
             <p>From that point on, Lucas’s world seemed brighter. He realized that discovering who you are isn’t a single moment but a journey. And with each step, he felt more confident in walking his own path, one that celebrated his interests, his passions, and his love.</p>
-        </details>
+        </div>
     </div>
 
     <footer>
         &copy; 2025 Lucas's Page. All rights reserved.
     </footer>
+
+    <script>
+        function toggleDetails() {
+            const detailsContent = document.getElementById('detailsContent');
+            const isVisible = detailsContent.style.display === 'block';
+            detailsContent.style.display = isVisible ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
-
