@@ -60,6 +60,8 @@
             display: block;
             margin: 20px auto;
             border-radius: 10px;
+            max-width: 100%;
+            height: auto;
         }
 
         button {
@@ -98,6 +100,30 @@
             font-size: 0.9em;
             color: #666;
             margin-top: 30px;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media screen and (max-width: 600px) {
+            .sidebar {
+                width: 30px;
+            }
+
+            h1 {
+                font-size: 20px; /* Adjusting font size for smaller screens */
+            }
+
+            .love-text {
+                font-size: 18px; /* Adjust font size for smaller screens */
+            }
+
+            .hearts {
+                font-size: 25px; /* Adjust heart size for smaller screens */
+            }
+
+            button {
+                width: 90%; /* Make button more responsive on small screens */
+                font-size: 14px; /* Adjust button font size */
+            }
         }
     </style>
 </head>
